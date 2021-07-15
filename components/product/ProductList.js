@@ -5,6 +5,7 @@ import { List, Spinner } from "native-base";
 
 //components
 import ProductItem from "./ProductItem";
+import { ScrollView } from "react-native";
 
 //styles
 import { ListWrapper } from "./styles";
@@ -18,9 +19,11 @@ const ProductList = ({ products, navigation }) => {
     <ProductItem product={product} key={product.id} navigation={navigation} />
   ));
   return (
-    <ListWrapper>
-      <List>{productList}</List>
-    </ListWrapper>
+    <ScrollView>
+      <ListWrapper>
+        <List>{productList}</List>
+      </ListWrapper>
+    </ScrollView>
   );
 };
 

@@ -26,8 +26,11 @@ export const ProductDetailTitle = styled.Text`
 `;
 
 export const ProductItemTitle = styled.Text`
-  font-size: 18px;
-  margin-left: 10px;
+  flex: 1;
+  flex-wrap: wrap;
+  font-size: 35px;
+  margin: 10px;
+  text-align: center;
 `;
 
 export const ProductDetailDetails = styled.Text`
@@ -45,6 +48,8 @@ export const ProductListItem = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
   Image {
     width: 100%;
     height: undefined;
@@ -54,6 +59,6 @@ export const ProductListItem = styled.View`
 `;
 
 export const ProductItemPrice = styled.Text`
-  font-size: 15px;
+  font-size: 25px;
   color: ${(props) => props.theme.secondaryColor};
 `;

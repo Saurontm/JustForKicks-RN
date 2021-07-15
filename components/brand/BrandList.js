@@ -5,6 +5,7 @@ import { List, Spinner } from "native-base";
 
 //components
 import BrandItem from "./BrandItem";
+import { ScrollView } from "react-native";
 
 //observer
 import { observer } from "mobx-react";
@@ -21,9 +22,11 @@ const BrandList = ({ navigation }) => {
   ));
 
   return (
-    <ListWrapper>
-      <List>{brandList}</List>
-    </ListWrapper>
+    <ScrollView>
+      <ListWrapper>
+        <List>{brandList}</List>
+      </ListWrapper>
+    </ScrollView>
   );
 };
 
