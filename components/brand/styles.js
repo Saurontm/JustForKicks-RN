@@ -13,6 +13,10 @@ export const BrandItemStyled = styled.Text`
   width: 100%;
 `;
 
+export const BrandItemQuantity = styled.Text`
+  color: ${(props) => props.theme.lightColor};
+`;
+
 export const BrandDetailWrapper = styled.View`
   margin-top: 50px;
   align-items: center;
@@ -20,12 +24,24 @@ export const BrandDetailWrapper = styled.View`
 `;
 
 export const BrandDetailImage = styled.Image`
-  width: 180px;
-  height: 150px;
+  ${
+    "" /* width: 180px;
+  height: 150px; */
+  }
+  width: 70%;
+  height: undefined;
+  aspect-ratio: 2;
   margin-bottom: 20px;
 `;
 
 export const BrandDetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40px;
+`;
+
+export const BrandItemImage = styled.Image`
+  width: 60px;
+  height: undefined;
+  aspect-ratio: 2;
+  margin-bottom: 20px;
 `;

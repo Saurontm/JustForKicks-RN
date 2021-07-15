@@ -30,7 +30,7 @@ const BrandDetails = ({ navigation, route }) => {
         <BrandDetailImage source={{ uri: brand.image }} />
         <BrandDetailTitle>{brand.name}</BrandDetailTitle>
       </BrandDetailWrapper>
-      <ProductList products={products} />
+      <ProductList products={products} navigation={navigation} />
     </>
   );
 };

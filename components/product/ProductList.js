@@ -12,10 +12,10 @@ import { ListWrapper } from "./styles";
 //stores
 import productStore from "../../stores/productStore";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, navigation }) => {
   if (productStore.loading) return <Spinner />;
   const productList = products.map((product) => (
-    <ProductItem product={product} key={product.id} />
+    <ProductItem product={product} key={product.id} navigation={navigation} />
   ));
   return (
     <ListWrapper>

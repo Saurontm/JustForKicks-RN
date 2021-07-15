@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import BrandList from "../brand/BrandList";
 import BrandDetails from "../brand/BrandDetails";
+import ProductDetails from "../product/ProductDetails";
 
 const Stack = createStackNavigator();
 export default RootNavigator = () => {
@@ -42,6 +43,16 @@ export default RootNavigator = () => {
           const { brand } = route.params;
           return {
             title: brand.name,
+          };
+        }}
+      />
+      <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
+        options={({ route }) => {
+          const { product } = route.params;
+          return {
+            title: product.name,
           };
         }}
       />

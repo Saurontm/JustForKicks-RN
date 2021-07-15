@@ -5,17 +5,24 @@ import { Image } from "react-native";
 import { List } from "native-base";
 
 //styles
-import { BrandItemStyled } from "./styles";
+import { BrandItemStyled, BrandItemImage, BrandItemQuantity } from "./styles";
 const BrandItem = ({ brand, navigation }) => {
   return (
     <List.Item
       onPress={() => navigation.navigate("BrandDetails", { brand: brand })}
     >
-      <Image
+      <BrandItemImage
         source={{ uri: brand.image }}
         style={{ width: 120, height: 100 }}
       />
-      <BrandItemStyled>{brand.name}</BrandItemStyled>
+      <BrandItemStyled>
+        {brand.name}
+        <BrandItemQuantity>
+          {" ("}
+          {brand.products.length}
+          {")"}
+        </BrandItemQuantity>
+      </BrandItemStyled>
     </List.Item>
   );
 };

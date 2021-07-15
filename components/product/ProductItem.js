@@ -5,14 +5,26 @@ import { Text, Image } from "react-native";
 //native-base
 import { List } from "native-base";
 
-const ProductItem = ({ product }) => {
+import { ProductItemTitle, ProductListItem, ProductItemPrice } from "./styles";
+
+const ProductItem = ({ product, navigation }) => {
   return (
-    <List.Item>
-      <Image
-        source={{ uri: product.image }}
-        style={{ width: 100, height: 50 }}
-      />
-      <Text>{product.name}</Text>
+    <List.Item
+      onPress={() =>
+        navigation.navigate("ProductDetails", { product: product })
+      }
+    >
+      <ProductListItem>
+        <Image
+          source={{ uri: product.image }}
+          style={{ width: 130, height: 70, marginBottom: 10 }}
+        />
+        <ProductItemTitle>{product.name}</ProductItemTitle>
+        <ProductItemPrice>
+          {" "}
+          {product.price} {"KD"}
+        </ProductItemPrice>
+      </ProductListItem>
     </List.Item>
   );
 };
