@@ -6,6 +6,8 @@ import Home from "../Home";
 import BrandList from "../brand/BrandList";
 import BrandDetails from "../brand/BrandDetails";
 import ProductDetails from "../product/ProductDetails";
+import CartButton from "../cart/buttons/CartButton";
+import CartList from "../cart/CartList";
 
 const Stack = createStackNavigator();
 export default RootNavigator = () => {
@@ -34,6 +36,7 @@ export default RootNavigator = () => {
         component={BrandList}
         options={{
           title: "Choose a brand",
+          headerRight: () => <CartButton />,
         }}
       />
       <Stack.Screen
@@ -43,6 +46,7 @@ export default RootNavigator = () => {
           const { brand } = route.params;
           return {
             title: brand.name,
+            headerRight: () => <CartButton />,
           };
         }}
       />
@@ -56,6 +60,8 @@ export default RootNavigator = () => {
           };
         }}
       />
+
+      <Stack.Screen name="CartList" component={CartList} />
     </Stack.Navigator>
   );
 };
