@@ -13,6 +13,7 @@ const theme = {
   backgroundColor: "white",
   secondaryColor: "#4B4B4B",
   lightColor: "#B3B3B3",
+  redColor: "#D8455E",
 };
 
 export default function App() {

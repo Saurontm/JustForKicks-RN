@@ -10,6 +10,7 @@ import CartItem from "./CartItem";
 
 //observer
 import { Observer, observer } from "mobx-react";
+import { CheckoutButton, CheckoutButtonText } from "./styles";
 
 const CartList = () => {
   if (productStore.loading) return <Spinner />;
@@ -19,7 +20,14 @@ const CartList = () => {
       quantity: item.quantity,
     }))
     .map((item) => <CartItem item={item} key={item.id} />);
-  return <List>{cartList}</List>;
+  return (
+    <>
+      <List>{cartList}</List>
+      <CheckoutButton onPress={cartStore.checkout}>
+        <CheckoutButtonText>Checkout</CheckoutButtonText>
+      </CheckoutButton>
+    </>
+  );
 };
 
 export default observer(CartList);
