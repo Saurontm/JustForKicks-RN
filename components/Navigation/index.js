@@ -8,6 +8,8 @@ import BrandDetails from "../brand/BrandDetails";
 import ProductDetails from "../product/ProductDetails";
 import CartButton from "../cart/buttons/CartButton";
 import CartList from "../cart/CartList";
+import Signin from "../authentication/Signin";
+import SignUp from "../authentication/SignUp";
 
 const Stack = createStackNavigator();
 export default RootNavigator = () => {
@@ -62,6 +64,20 @@ export default RootNavigator = () => {
       />
 
       <Stack.Screen name="CartList" component={CartList} />
+      <Stack.Screen
+        name="Signin"
+        component={Signin}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={SignUp}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
